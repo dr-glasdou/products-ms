@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 import { envs } from './config';
 
 async function bootstrap() {
-  const logger = new Logger('bootstrap');
+  const logger = new Logger('ProductsMS');
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
     transport: Transport.TCP,
     options: {
@@ -22,6 +22,6 @@ async function bootstrap() {
 
   await app.listen();
 
-  logger.log(`Product microservice is running on port ${envs.port}`);
+  logger.log(`ProductsMS is running on port ${envs.port}`);
 }
 bootstrap();
